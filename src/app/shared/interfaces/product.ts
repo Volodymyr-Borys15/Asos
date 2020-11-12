@@ -1,0 +1,20 @@
+export interface IProduct {
+    id:number;
+    type:string;
+    gender:string;
+    category:string;
+    style:string;
+    name:string;
+    brand:string;
+    price:number;
+    description:string;
+    count:number; 
+    color:string;
+    firstSize:string;
+    secondSize?:string;
+    thirdSize?:string;
+    fourthSize?:string;
+    image?:string;
+    date?:object;
+    orderSize?:string;
+}

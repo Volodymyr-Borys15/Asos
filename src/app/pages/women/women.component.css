@@ -1,0 +1,715 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.menu {
+  width: 100%;
+  height: 50px;
+  background-color: #6e6a6a;
+  padding: 0 10px 0 20px;
+}
+
+.menu nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.box {
+  width: 80px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+}
+
+.box p {
+  font-size: 17px;
+}
+
+.box:hover {
+  background-color: #eee;
+}
+
+.box:hover a {
+  color: #6e6a6a;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.sale {
+  background-color: #b70127;
+  font-size: 30px;
+}
+
+.sale:hover a {
+  color: #6e6a6a;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.app {
+  width: 100%;
+  min-height: 50px;
+  background-color: #bba7f9;
+  text-align: center;
+  font-weight: bold;
+}
+
+.delivery {
+  width: 100%;
+  height: 135px;
+  background-color: #20C89E;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.delivery .message-one {
+  width: 700px;
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+.delivery .message-two {
+  width: 450px;
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+.sale-box {
+  width: 100%;
+  min-height: 490px;
+  background-image: url("../../../assets/women-back.jpeg");
+  background-size: 100%;
+  margin-top: 40px;
+  padding-top: 25px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.sale-box .message-three {
+  width: 200px;
+  height: 50px;
+  background-color: #cf3758;
+  color: white;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sale-box .message-four {
+  width: 300px;
+  height: 50px;
+  background-color: #cf3758;
+  color: white;
+  margin: 5px auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.carousel {
+  margin-top: 20px;
+  width: 100%;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 150px;
+  height: 140px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.title {
+  width: 150px;
+  max-height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: white;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.show-all {
+  width: 150px;
+  height: 45px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  line-height: 45px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.show-all:hover {
+  background-color: black;
+  color: white;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.some-text {
+  width: 300px;
+  height: 20px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 10px;
+}
+
+.new-box {
+  width: 100%;
+  height: 590px;
+  margin: 30px auto;
+  padding: 0 20px 0 20px;
+  overflow: hidden;
+}
+
+.new-box-image {
+  width: 100%;
+  height: 550px;
+  background-image: url("../../../assets/women9.jpeg");
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-box-text {
+  width: 650px;
+  height: 100px;
+  z-index: 3;
+  font-size: 70px;
+  font-weight: bolder;
+  color: #383737;
+  text-align: center;
+}
+
+.start-now {
+  width: 170px;
+  height: 45px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  line-height: 45px;
+  font-weight: bold;
+  margin: 10px 0 40px 0;
+  z-index: 3;
+  -webkit-transition: 1s;
+  transition: 1s;
+  border: 2px solid white;
+}
+
+.start-now:hover {
+  background-color: black;
+  color: white;
+}
+
+.some-staff {
+  width: 100%;
+  height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: -20px;
+  overflow: hidden;
+}
+
+.big-card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 290px;
+  height: 290px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.big-title {
+  width: 100%;
+  max-height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: white;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.fun-staff {
+  width: 100%;
+  height: 850px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.bigger-card {
+  width: 42%;
+  height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.desc-one {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+}
+
+.desc-two {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn-active-wear {
+  width: 175px;
+  height: 45px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  line-height: 45px;
+  font-weight: bold;
+  -webkit-transition: 1s;
+  transition: 1s;
+  border: 2px solid black;
+  margin: 0 auto;
+  padding: 0px 3px 0px 3px;
+}
+
+.btn-active-wear:hover {
+  background-color: black;
+  color: white;
+}
+
+.logo-brands {
+  width: 100%;
+  height: 350px;
+  padding: 20px 0 0 0;
+}
+
+.title-logo {
+  width: 400px;
+  height: 30px;
+  margin: 0px auto;
+  text-align: center;
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.list-logo {
+  width: 100%;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-logo:hover {
+  opacity: 0.6;
+}
+
+.sale-menu,
+.show-men-brands,
+.new-menu,
+.show-men-clothing,
+.show-men-shoes,
+.show-men-acc {
+  display: none;
+  min-width: 700px;
+  min-height: 300px;
+  padding: 20px;
+  background-color: #eee;
+  position: absolute;
+  left: 20px;
+  z-index: 50;
+  color: black;
+}
+
+.sale-menu ul,
+.show-men-brands ul,
+.new-menu ul,
+.show-men-clothing ul,
+.show-men-shoes ul,
+.show-men-acc ul {
+  list-style: none;
+}
+
+.sale-menu ul li,
+.show-men-brands ul li,
+.new-menu ul li,
+.show-men-clothing ul li,
+.show-men-shoes ul li,
+.show-men-acc ul li {
+  width: 260px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.sale-menu ul a,
+.show-men-brands ul a,
+.new-menu ul a,
+.show-men-clothing ul a,
+.show-men-shoes ul a,
+.show-men-acc ul a {
+  color: #6e6a6a;
+  font-size: 15px;
+}
+
+.go-to-sale:hover .sale-menu {
+  display: block;
+}
+
+.go-to-new:hover .new-menu {
+  display: block;
+}
+
+.go-to-men-clothing:hover .show-men-clothing {
+  display: block;
+}
+
+.go-to-men-shoes:hover .show-men-shoes {
+  display: block;
+}
+
+.go-to-men-acc:hover .show-men-acc {
+  display: block;
+}
+
+.go-to-men-brands:hover .show-men-brands {
+  display: block;
+}
+
+@media (min-width: 1024px) and (max-width: 1095px) {
+  .new-box-image {
+    height: 490px;
+  }
+  .new-box {
+    height: 515px;
+  }
+  .some-staff {
+    margin-bottom: 50px;
+    height: 310px;
+    height: 320px;
+  }
+  .some-staff a {
+    width: 220px;
+    height: 100%;
+  }
+  .big-card {
+    height: 75%;
+    width: 220px;
+  }
+}
+
+@media (min-width: 860px) and (max-width: 1024px) {
+  .new-box-image {
+    height: 380px;
+  }
+  .new-box {
+    height: 400px;
+  }
+  .some-staff {
+    margin-bottom: 50px;
+    height: 320px;
+  }
+  .some-staff a {
+    width: 220px;
+    height: 100%;
+  }
+  .big-card {
+    height: 75%;
+    width: 220px;
+  }
+  .big-title {
+    width: 100%;
+  }
+  .fun-staff {
+    height: 680px;
+  }
+  .logo-brands {
+    height: 250px;
+  }
+}
+
+@media (min-width: 740px) and (max-width: 860px) {
+  .carousel {
+    display: none;
+  }
+  .sale-box {
+    min-height: 225px;
+  }
+  .new-box-image {
+    height: 325px;
+  }
+  .new-box {
+    height: 335px;
+  }
+  .some-staff {
+    margin-bottom: 50px;
+    height: 250px;
+    margin-bottom: 10px;
+  }
+  .some-staff .big-card {
+    height: 75%;
+    width: 150px;
+  }
+  .some-staff .big-card a {
+    width: 150px;
+    height: 100%;
+  }
+  .some-staff .big-card a .big-title {
+    width: 100%;
+    font-size: 19px;
+  }
+  .fun-staff {
+    height: 460px;
+  }
+  .logo-brands {
+    height: 195px;
+  }
+  .list-logo {
+    height: 150px;
+  }
+  .bigger-card a {
+    text-align: center;
+  }
+  .bigger-card a img {
+    width: 70%;
+  }
+  .desc-one {
+    display: none;
+  }
+  .desc-two {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 740px) {
+  .app,
+  .delivery {
+    display: none;
+  }
+  .carousel {
+    display: none;
+  }
+  .sale-box {
+    min-height: 225px;
+  }
+  .new-box-text {
+    display: none;
+  }
+  .new-box-image {
+    height: 290px;
+  }
+  .new-box {
+    height: 300px;
+  }
+  .some-staff {
+    margin-bottom: 50px;
+    height: 380px;
+    margin-bottom: 10px;
+  }
+  .big-card {
+    height: 250px;
+    text-align: center;
+    width: 250px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .big-card:nth-child(odd) {
+    background-color: red;
+    display: none;
+  }
+  .big-card a {
+    width: 100%;
+    height: 100%;
+  }
+  .big-card > a > img {
+    width: 70%;
+  }
+  .big-title {
+    width: 100%;
+  }
+  .fun-staff {
+    height: 396px;
+  }
+  .logo-brands {
+    height: 195px;
+  }
+  .list-logo {
+    height: 150px;
+  }
+  .bigger-card a {
+    text-align: center;
+  }
+  .bigger-card a img {
+    width: 70%;
+  }
+  .desc-one {
+    display: none;
+  }
+  .desc-two {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .app,
+  .delivery {
+    display: none;
+  }
+  .carousel {
+    display: none;
+  }
+  .title-logo {
+    width: 100%;
+  }
+  .sale-box {
+    min-height: 225px;
+  }
+  .new-box-text {
+    display: none;
+  }
+  .new-box-image {
+    height: 195px;
+  }
+  .new-box {
+    height: 205px;
+  }
+  .some-staff {
+    display: none;
+  }
+  .fun-staff {
+    min-height: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .bigger-card {
+    width: 100%;
+    height: 380px;
+  }
+  .bigger-card a {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .bigger-card a img {
+    width: 50%;
+  }
+  .logo-brands {
+    height: 195px;
+  }
+  .list-logo {
+    height: 150px;
+  }
+  .desc-one {
+    display: none;
+  }
+  .desc-two {
+    margin-top: 10px;
+  }
+  .fun-staff {
+    height: 596px;
+  }
+  .bigger-card {
+    height: 300px;
+  }
+}
+/*# sourceMappingURL=women.component.css.map */

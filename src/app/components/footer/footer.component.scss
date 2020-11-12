@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: silver;
+  margin-bottom: 10px;
+}
+
+.social-block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.media-block {
+  width: 800px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.m-icon {
+  width: 30px;
+  height: 30px;
+  transition: 1s;
+
+  img {
+    border-radius: 100px;
+
+    &:hover {
+      border: 2px solid dodgerblue;
+    }
+  }
+
+}
+
+.m-icon>span {
+  display: block;
+  width: 1px;
+  height: 30px;
+  background-color: silver;
+  margin: 0 10px 0 10px
+}
+
+.b-icon {
+  margin-top: -25px;
+  width: 40px;
+  height: 15px;
+}
+
+.info {
+  width: 100%;
+  height: 210px;
+  background-color: #eee;
+  display: flex;
+  padding: 40px 10px 20px 30px;
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-top: 10px;
+
+      a {
+        text-decoration: none;
+        color: rgb(110, 106, 106);
+
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+  }
+}
+
+.help,
+.about,
+.more-info,
+.location {
+  width: 25%;
+}
+
+.info h3 {
+  color: rgb(110, 106, 106);
+}
+
+.line {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  width: 200px;
+  color: rgb(110, 106, 106);
+
+  span {
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: silver;
+    margin: 0 3px 0 3px
+  }
+}
+
+.country {
+  width: 20px;
+  height: 20px;
+
+  img {
+    border-radius: 100px;
+  }
+}
+
+.location a {
+  text-decoration: none;
+  color: rgb(110, 106, 106);
+
+  &:hover {
+    color: blue;
+  }
+}
+.asos-lab{
+  display: none;
+}
+
+@media (min-width: 481px) and (max-width: 860px) {
+  .social-block,.info,.divider{
+    display: none;
+  }
+  .asos-lab{
+    display: block;
+  }
+  footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div{
+    margin: 0 auto;
+  }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .social-block,.info,.divider{
+    display: none;
+  }
+  .asos-lab{
+    display: block;
+  }
+  footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div{
+    margin: 0 auto;
+  }
+  }
+}

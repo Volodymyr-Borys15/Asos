@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="title-asos">ASOS</div>
+  <div class="forms-container">
+    <div class="switch-forms">
+      <div class="join-us" [class.active-btn]='activeBtn' (click)="showJoin()">JOIN US</div>
+      <div class="sign-us" [class.active-btn]='!activeBtn' (click)="showSign()">SIGN IN</div>
+    </div>
+    <div class="forms-vision">
+
+      <form #userForm='ngForm' class="join-form" *ngIf="activeForm">
+        <p>Name</p>
+        <input type="text" [(ngModel)]="newUser.name" name="userName" id="userName" #name='ngModel' minlength="2" required>
+        <div class="error-name" [hidden]='!name.errors?.required || !name.touched'>this field required</div>
+        <div class="error-name" [hidden]='!name.errors?.minlength'>should be more than 2 letters</div>
+
+        <p>Email</p>
+        <input type="email" [(ngModel)]="newUser.email" name="userEmail" #email='ngModel' required
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+        <div class="error-name" [hidden]='!email.errors?.pattern'>email is not valid</div>
+        <div class="error-name" [hidden]='!registeredEmail'>email address is already registered</div>
+        <p>Password</p>
+        <input type="password" [(ngModel)]="newUser.password" #password='ngModel' id="userPassword" name="userPassword"
+        minlength="6" required>
+        <div class="error-name" [hidden]='!password.errors?.required || !password.touched'>this field required</div>
+        <div class="error-name" [hidden]='!password.errors?.minlength'>should be more than 6 symbols</div>
+        <button (click)="addUser()" [disabled]='userForm.invalid'>JOIN ASOS</button>
+      </form>
+      <form #registeredForm='ngForm' class="in-form" *ngIf="!activeForm">
+        <p>Email</p>
+        <input type="email" [(ngModel)]="registeredUser.email" name="checkEmail" id="checkEmail" #email='ngModel'
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          required>
+        <div class="error-name" [hidden]="!email.errors?.pattern || !email.touched">not correct</div>
+        <p>Password</p>
+        <input type="password" [(ngModel)]="registeredUser.password" name="checkPassword" id="checkPassword"
+          #password='ngModel' required minlength="6">
+        <div class="error-name" [hidden]="password.valid || !password.touched">not correct</div>
+        <div class="error-name" *ngIf="notCorrectForm">email or password is wrong</div>
+        
+        <button (click)="signIn()" [disabled]='registeredForm.invalid'>SIGN IN</button>
+
+      </form>
+    </div>
+  </div>
+</div>

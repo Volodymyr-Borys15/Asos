@@ -1,0 +1,92 @@
+<form action="">
+    <label for="typeProduct">
+        <input type="text" [(ngModel)]="typeProduct" name="typeProduct" placeholder="type">
+    </label>
+    <label for="genderProduct">
+        <input type="text" [(ngModel)]="genderProduct" name="genderProduct" placeholder="gender">
+    </label>
+    <label for="categoryProduct">
+        <input type="text" [(ngModel)]="categoryProduct" name="categoryProduct" placeholder="category">
+    </label>
+    <label for="stylishProduct">
+        <input type="text" [(ngModel)]="stylishProduct" name="stylishProduct" placeholder="style">
+    </label>
+    <label for="nameProduct">
+        <input type="text" [(ngModel)]="nameProduct" name="nameProduct" placeholder="name">
+    </label>
+    <label for="brandProduct">
+        <input type="text" [(ngModel)]="brandProduct" name="brandProduct" placeholder="brand">
+    </label>
+    <label for="priceProduct">
+        <input type="number" [(ngModel)]="priceProduct" name="priceProduct" placeholder="price">
+    </label>
+    <label for="descriptionProduct">
+        <input type="text" [(ngModel)]="descriptionProduct" name="descriptionProduct" placeholder="description">
+    </label>
+    <label for="colorProduct">
+        <input type="text" [(ngModel)]="colorProduct" name="colorProduct" placeholder="color">
+    </label>
+    <label for="firstSizeProduct">
+        <input type="text" [(ngModel)]="firstSizeProduct" name="firstSizeProduct" placeholder="size1">
+    </label>
+    <label for="secondSizeProduct">
+        <input type="text" [(ngModel)]="secondSizeProduct" name="secondSizeProduct" placeholder="size2">
+    </label>
+    <label for="thirdSizeProduct">
+        <input type="text" [(ngModel)]="thirdSizeProduct" name="thirdSizeProduct" placeholder="size3">
+    </label>
+    <label for="fourthSizeProduct">
+        <input type="text" [(ngModel)]="fourthSizeProduct" name="fourthSizeProduct" placeholder="size4">
+    </label>
+    
+    <input type="file" name="file" id="file" (change)="uploadFile($event)" class="inputfile" />
+    <label for="file">Choose a image</label>
+
+    <button (click)="addProduct()">{{addORsave}}</button>
+</form>
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Type</th>
+        <th>Gender</th>
+        <th>Category</th>
+        <th>Style</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Count</th>
+        <th>Color</th>
+        <th>Date</th>
+        <th>Size1</th>
+        <th>Size2</th>
+        <th>Size3</th>
+        <th>Size4</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+        <tr *ngFor="let p of myProduct; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{p.type}}</td>
+            <td>{{p.gender}}</td>
+            <td>{{p.category}}</td>
+            <td>{{p.style}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.brand}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.description}}</td>
+            <td>{{p.count}}</td>
+            <td>{{p.color}}</td>
+            <td>{{p.date|date}}</td>
+            <td>{{p.firstSize}}</td>
+            <td>{{p.secondSize}}</td>
+            <td>{{p.thirdSize}}</td>
+            <td>{{p.fourthSize}}</td>
+            <td>
+                <button (click)="editProduct(p)">Edit</button>
+            </td>
+            <td>
+                <button (click)="deleteProduct(p)">Delete</button>
+            </td>
+        </tr>
+</table>

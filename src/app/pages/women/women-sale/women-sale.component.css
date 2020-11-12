@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  min-height: 50px;
+  background-color: #bba7f9;
+  text-align: center;
+  font-weight: bold;
+}
+
+.way {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: white;
+  color: #6e6a6a;
+  padding: 0 20px 0 20px;
+}
+
+.way a {
+  text-decoration: none;
+  color: #6e6a6a;
+}
+
+.way a:visited {
+  color: #6e6a6a;
+}
+
+.description {
+  width: 100%;
+  /* height: 70px; */
+  min-height: 70px;
+  background-color: #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.description > div {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 17px;
+}
+
+.description > div p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.filter {
+  width: 100%;
+  /* height: 70px; */
+  min-height: 20px;
+  padding: 20px;
+  background-color: silver;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter p {
+  font-size: 19px;
+}
+
+.filter select {
+  width: 120px;
+  padding: 4px;
+}
+
+.filter select option {
+  text-align: center;
+}
+
+.list-product {
+  width: 100%;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+.card-product {
+  width: 100%;
+  min-height: 10px;
+}
+
+.card-product img {
+  max-width: 100%;
+  display: block;
+}
+
+.card-product img:hover {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+.card-product a {
+  color: black;
+  text-decoration: none;
+}
+
+.prod-name {
+  width: 100%;
+  /*  height: 50px; */
+  min-height: 10px;
+  font-style: 15px;
+  padding-top: 3px;
+}
+
+.prod-price {
+  width: 100%;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.show-more {
+  width: 170px;
+  height: 45px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  line-height: 45px;
+  font-weight: bold;
+  margin: 0 auto 40px;
+  z-index: 3;
+  -webkit-transition: 1s;
+  transition: 1s;
+  border: 2px solid black;
+}
+
+.show-more:hover {
+  background-color: black;
+  color: white;
+}
+
+.favor {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+}
+
+.favor img {
+  background-color: red;
+  border: 2px solid red;
+}
+
+.wrap-fav {
+  height: 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2px;
+}
+
+.prod-price {
+  width: 50%;
+  line-height: 24px;
+}
+
+.greenClass {
+  background-color: green;
+}
+
+@media (min-width: 500px) and (max-width: 800px) {
+  .list-product {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .filter {
+    padding: 20px 5px 20px 5px;
+  }
+  .filter select {
+    width: 75px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+  .list-product {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .filter {
+    padding: 20px 5px 20px 5px;
+  }
+  .filter p {
+    font-size: 17px;
+  }
+  .filter select {
+    width: 55px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+  .list-product {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .filter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 5px 20px 5px;
+  }
+  .filter p {
+    font-size: 20px;
+  }
+  .filter select {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=women-sale.component.css.map */

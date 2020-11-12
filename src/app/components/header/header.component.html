@@ -1,0 +1,302 @@
+<header>
+  <div class="top-header" appDcolor>
+    <div class="top-header-container">
+      <div class="hamburger" (click)="navToggle()">
+        <div class="line-one" [class.toggle-one]='toggleActive'></div>
+        <div class="line-two" [class.toggle-two]='toggleActive'></div>
+      </div>
+      <a [routerLink]="[ '/path']" (click)="activeMen()">
+        <div class="logo">
+          <p>ASOS</p>
+        </div>
+      </a>
+      <a [routerLink]="[ '/women']" (click)="activeWomen()" [class.active]='activeStatus'>
+        <div class="women">
+          <p>WOMEN</p>
+        </div>
+      </a>
+      <a [routerLink]="[ '/men']" (click)="activeMen()" [class.active]='!activeStatus'>
+        <div class="men">
+          <p>MEN</p>
+        </div>
+      </a>
+    </div>
+    <div class="wrapper-icons">
+      <div class="icons">
+        <a [routerLink]="[ '/admin']" *ngIf="!showMe">
+          <div class="person">
+            <img src="../../../assets/person1.png" alt="">
+          </div>
+        </a>
+        <a [routerLink]="[ '/login']" *ngIf="showMe==true">
+          <div class="heart">
+            <img src="../../../assets/person1.png" alt="">
+          </div>
+        </a>
+        <a [routerLink]="[ '/favors']">
+          <div class="lock">
+            <img src="../../../assets/prize.png" alt="">
+          </div>
+        </a>
+        <!--  -->
+
+        <a [routerLink]="[ '/basket']" (mouseover)='over()'>
+          <div class="lock">
+            <img src="../../../assets/whitebag.png" alt="">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <div class="toggle-menu" *ngIf="toggleActive">
+    <div class="toggleMenWomen">
+      <div class="toggle-men"  [class.nav-border]='!activeStatus' (click)="activeMen()">MEN</div>
+      <div class="toggle-women"  [class.nav-border]='activeStatus' (click)="activeWomen()">WOMEN</div>
+    </div>
+    <div class="toggle-login">
+      <a [routerLink]="[ '/admin']" *ngIf="!showMe">
+        <div class="person">
+          <img src="../../../assets/person1.png" alt="">
+        </div>
+      </a>
+      <a [routerLink]="[ '/login']" *ngIf="showMe==true">
+        <div class="heart">
+          <img src="../../../assets/person1.png" alt="">
+        </div>
+      </a>
+      <a [routerLink]="[ '/favors']">
+        <div class="lock">
+          <img src="../../../assets/prize.png" alt="">
+        </div>
+      </a>
+      <a [routerLink]="[ '/basket']">
+        <div class="lock">
+          <img src="../../../assets/whitebag.png" alt="">
+        </div>
+      </a>
+    </div>
+    <div class="toggle-nav">
+      <div class="nav-men" *ngIf="!activeStatus">
+
+        <a [routerLink]="[ '/men']">
+          <div class="nav-block" (click)="activeMen()">Home</div>
+        </a>
+
+        <a [routerLink]="[ '/men-sale']">
+          <div class="nav-block">Sale</div>
+        </a>
+
+        <a [routerLink]="[ '/men-new']">
+          <div class="nav-block">New</div>
+        </a>
+
+        <a [routerLink]="[ '/men-all-clothing']">
+          <div class="nav-block">Clothing</div>
+        </a>
+
+        <a [routerLink]="[ '/men-all-shoes']">
+          <div class="nav-block">Shoes</div>
+        </a>
+
+        <a [routerLink]="[ '/men-all-accessories']">
+          <div class="nav-block">Accessories</div>
+        </a>
+
+        <a [routerLink]="[ '/men-all-azbrands']">
+          <div class="nav-block">Brands</div>
+        </a>
+
+      </div>
+
+      <div class="nav-women" *ngIf="activeStatus">
+        <a [routerLink]="[ '/women']">
+          <div class="nav-block" (click)="activeWomen()">Home</div>
+        </a>
+
+        <a [routerLink]="[ '/women-all-sale']">
+          <div class="nav-block">Sale</div>
+        </a>
+
+        <a [routerLink]="[ '/women-new']">
+          <div class="nav-block">New</div>
+        </a>
+
+        <a [routerLink]="[ '/women-all-clothing']">
+          <div class="nav-block">Clothing</div>
+        </a>
+
+        <a [routerLink]="[ '/women-all-shoes']">
+          <div class="nav-block">Shoes</div>
+        </a>
+
+        <a [routerLink]="[ '/women-all-accessories']">
+          <div class="nav-block">Accessories</div>
+        </a>
+
+        <a [routerLink]="[ '/women-all-azbrands']">
+          <div class="nav-block">Brands</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+
+  <!--  -->
+ 
+  <div class="pre-bag" *ngIf="preBag&&subOrder.length>0" data-aos="fade-down">
+        <span (click)="out()"> ⨯ </span>
+        <div class="wrapper-order">
+        <div *ngFor="let s of subOrder" class="list-order">
+          <div class="wrapper-img">
+              <div class="order-img">
+                <img src="{{s.image}}" alt="">
+              </div>
+            </div>
+            <div class="wrapper-information">
+              <div class="order-name">{{s.name}}</div>
+              <div class="order-name">price: {{s.price|currency:"GBP"}}</div>
+              <div (click)="deleteProduct(s)" class="delete-order">
+              <img src="../../../assets/trash.png" alt=""></div>
+            </div>
+        </div>
+        </div>
+        <div class="wrapper-btn">
+          <div class="view-bag" (click)="viewBag()">View bag</div>
+      </div>
+  </div>
+  <!--  -->
+
+  <menu class="menu" *ngIf="!activeStatus">
+    <nav>
+      <div class="box sale go-to-sale">
+        <a [routerLink]="[ '/men-sale']">Sale</a>
+        <div class="sale-menu">
+          <div>Shop sale</div>
+          <ul *ngFor="let a of salesCategory">
+            <li><a [routerLink]="[ '/men-sale/'+a]">{{a|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box  go-to-new">
+        <a [routerLink]="[ '/men-new']">New in</a>
+        <div class="new-menu">
+          <div>New staff</div>
+          <ul *ngFor="let n of newCategory">
+            <li><a [routerLink]="[ '/new-products/'+n]">{{n|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box go-to-men-clothing">
+        <a [routerLink]="[ '/men-all-clothing']">Clothing</a>
+        <div class="show-men-clothing">
+          <div>Nice look</div>
+          <ul *ngFor="let s of styleClothing">
+            <li><a [routerLink]="[ '/men-clothing/'+s]">{{s|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="box go-to-men-shoes">
+        <a [routerLink]="[ '/men-all-shoes']">Shoes</a>
+        <div class="show-men-shoes">
+          <div>Walk with us</div>
+          <ul *ngFor="let s of styleShoes">
+            <li><a [routerLink]="[ '/men-shoes/'+s]">{{s|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box go-to-men-acc">
+        <a [routerLink]="[ '/men-all-accessories']">Accessories</a>
+        <div class="show-men-acc">
+          <div>Asos in details</div>
+          <ul *ngFor="let s of styleAccessories">
+            <li><a [routerLink]="[ '/men-accessories/'+s]">{{s|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box go-to-men-brands">
+        <a [routerLink]="[ '/men-all-azbrands']" class="">Brands</a>
+        <div class="show-men-brands">
+          <div>Find your's</div>
+          <ul *ngFor="let b of brandsMen">
+            <li><a [routerLink]="[ '/men-azbrands/'+b]">{{b|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </menu>
+
+  <menu class="menu" *ngIf="activeStatus">
+    <nav>
+      <div class="box sale go-to-sale">
+        <a [routerLink]="[ '/women-all-sale']">Sale</a>
+        <div class="sale-menu">
+          <div>Shop sale</div>
+          <ul *ngFor="let s of womenSalesCategory">
+            <li><a [routerLink]="[ '/women-sale/'+s]">{{s|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box  go-to-new">
+        <a [routerLink]="[ '/women-new']">New in</a>
+        <div class="new-menu">
+          <div>New Staff</div>
+          <ul *ngFor="let n of newCategory">
+            <li><a [routerLink]="[ '/women-new-products/'+n]">{{n|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box go-to-men-clothing">
+        <a [routerLink]="[ '/women-all-clothing']">Clothing</a>
+        <div class="show-men-clothing">
+          <div>Clothing</div>
+          <ul *ngFor="let s of womenClothingStyle">
+            <li><a [routerLink]="[ '/women-clothing/'+s]">{{s|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="box go-to-men-shoes">
+        <a [routerLink]="[ '/women-all-shoes']" class="">Shoes</a>
+        <div class="show-men-shoes">
+          <div>Shoes</div>
+          <ul *ngFor="let s of womenShoesStyle">
+            <li><a [routerLink]="[ '/women-shoes/'+s]">{{s|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box go-to-men-acc">
+        <a [routerLink]="[ '/women-all-accessories']">Accessories</a>
+        <div class="show-men-acc">
+          <div>Accessories</div>
+          <ul *ngFor="let a of womenAccessoriesStyle">
+            <li><a [routerLink]="[ '/women-accessories/'+a]">{{a|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="box go-to-men-brands">
+        <a [routerLink]="[ '/women-all-azbrands']" class="">Brands</a>
+        <div class="show-men-brands">
+          <div>Brands</div>
+          <ul *ngFor="let b of womenBrands">
+            <li><a [routerLink]="[ '/women-azbrands/'+b]">{{b|titlecase}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+    </nav>
+  </menu>
+
+</header>

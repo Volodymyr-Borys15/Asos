@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+form input {
+  margin-top: 10px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+form input[name='imageSale'] {
+  width: 535px;
+}
+
+form button {
+  width: 170px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #4CAF50;
+  font-size: 20px;
+  color: white;
+}
+
+form button:hover {
+  opacity: 0.7;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 10px 10px 0;
+}
+
+.table td,
+.table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  width: 170px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #4CAF50;
+}
+
+.inputfile + label {
+  cursor: pointer;
+}
+/*# sourceMappingURL=admin-sale.component.css.map */

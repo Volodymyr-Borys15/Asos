@@ -1,0 +1,164 @@
+<div class="container">
+  <div class="newUser" *ngIf="vision == 1">
+    <div class="order-wrapper">
+      <div class="user-name" *ngFor="let u of currentUser">
+        <div>hi</div>
+        <div> {{u?.name|titlecase}}</div>
+      </div>
+      <button (click)="logout()">Log out</button>
+
+      <p *ngIf="currentOrder.length > 0">Your order:</p>
+
+      <div class="order-cards">
+        <div *ngFor="let o of currentOrder;let i = index"
+          style="width: 100%;height: 100%;display: flex;margin-top: 10px;border: 1px solid black;">
+          <div class="image-wrapper"><img src="{{o.image}}" style="width: 100%;"></div>
+          <div style="display: flex;justify-content: space-around;flex-direction: column;align-items: center;
+      width: 100%;">
+            <div><strong>by</strong> {{o.brand}}</div>
+            <div><strong>color:</strong> {{o.color}}</div>
+            <div><strong>name:</strong> {{o.name}}</div>
+            <div><strong>your size:</strong> {{o.orderSize}}</div>
+            <div><strong>quantity:</strong> {{o.count}}</div>
+            <div><strong>price:</strong> {{o.price|currency:'GBP'}}</div>
+          </div>
+        </div>
+        <div class="total-p" *ngIf="currentOrder.length > 0">Total price: {{totalPrice|currency:'GBP'}}</div>
+      </div>
+    </div>
+
+    <form #userForm='ngForm' *ngIf="currentOrder.length > 0">
+      <p>Country:</p>
+      <input type="text" [(ngModel)]="newUser.country" name="userCountry" id="userCountry" #country='ngModel' required
+        placeholder="Country">
+      <div class="error-name" [hidden]='!country.errors?.required || !country.touched'>this field required</div>
+      <p>City:</p>
+      <input type="text" [(ngModel)]="newUser.city" name="userCity" id="userCity" #city='ngModel' required
+        placeholder="City">
+      <div class="error-name" [hidden]='!city.errors?.required || !city.touched'>this field required</div>
+      <p>Street</p>
+      <input type="text" [(ngModel)]="newUser.street" name="userStreet" id="userStreet" #street='ngModel' required
+        placeholder="Street">
+      <div class="error-name" [hidden]='!street.errors?.required || !street.touched'>this field required</div>
+      <p>House:</p>
+      <input type="text" [(ngModel)]="newUser.house" name="userHouse" id="userHouse" #house='ngModel' required
+        placeholder="House">
+      <div class="error-name" [hidden]='!house.errors?.required || !house.touched'>this field required</div>
+      <p>Phone number:</p>
+      <input type="text" [(ngModel)]="newUser.phone" name="userPhone" id="userPhone" #phone='ngModel' required
+        placeholder="(000) 000-0000" [textMask]="{mask: phoneMask}">
+      <div class="error-name" [hidden]='!phone.errors?.required || !phone.touched'>this field required</div>
+      <p>Credit card:</p>
+      <input type="text" [(ngModel)]="newUser.card" name="userCard" id="userCard" #card='ngModel' required
+        placeholder="**** **** **** ****" [textMask]="{mask: cardMask}">
+      <div class="error-name" [hidden]='!card.errors?.required || !card.touched'>this field required</div>
+      <button (click)="dealIsDone()" [disabled]='userForm.invalid'>Deal Done</button>
+    </form>
+
+  </div>
+  <div class="alreadyUser" *ngIf="vision == 2">
+    <div class="ord-wrapper">
+      <div class="currentUser"><span>Hi</span> {{orderInfoName|titlecase}}</div>
+      <div class="button-wrapper">
+        <button class="logout" (click)="logout()">Log out</button>
+        <button class="change-info" (click)="changeInfo()">Change informations</button>
+        <button class="change-info" (click)="saveInfo()" *ngIf="showInfo">Save changes</button>
+      </div>
+      
+      <div class="show-info" *ngIf="showInfo">
+        <form #alreadyUserForm='ngForm'>
+          <p>Country:</p>
+          <input type="text" [(ngModel)]="newUser.country" name="userCountry" id="userCountry" #country='ngModel'
+            required placeholder="Country">
+          <div class="error-name" [hidden]='!country.errors?.required || !country.touched'>this field required</div>
+          <p>City:</p>
+          <input type="text" [(ngModel)]="newUser.city" name="userCity" id="userCity" #city='ngModel' required
+            placeholder="City">
+          <div class="error-name" [hidden]='!city.errors?.required || !city.touched'>this field required</div>
+          <p>Street</p>
+          <input type="text" [(ngModel)]="newUser.street" name="userStreet" id="userStreet" #street='ngModel' required
+            placeholder="Street">
+          <div class="error-name" [hidden]='!street.errors?.required || !street.touched'>this field required</div>
+          <p>House:</p>
+          <input type="text" [(ngModel)]="newUser.house" name="userHouse" id="userHouse" #house='ngModel' required
+            placeholder="House">
+          <div class="error-name" [hidden]='!house.errors?.required || !house.touched'>this field required</div>
+          <p>Phone number:</p>
+          <input type="text" [(ngModel)]="newUser.phone" name="userPhone" id="userPhone" #phone='ngModel' required
+            placeholder="(000) 000-0000" [textMask]="{mask: phoneMask}">
+          <div class="error-name" [hidden]='!phone.errors?.required || !phone.touched'>this field required</div>
+          <p>Credit card:</p>
+          <input type="text" [(ngModel)]="newUser.card" name="userCard" id="userCard" #card='ngModel' required
+            placeholder="**** **** **** ****" [textMask]="{mask: cardMask}">
+          <div class="error-name" [hidden]='!card.errors?.required || !card.touched'>this field required</div>
+        </form>
+      </div>
+
+      <div *ngIf="currentOrder.length>0">Your new order:</div>
+
+      <div class="current-order-wrapper">
+        <div class="current-order" *ngFor="let u of currentOrder;let i = index">
+          <div class="img-wrap">
+            <div><img src="{{u?.image}}"></div>
+          </div>
+          <div class="information-wrap">
+            <div>{{u?.name|titlecase}}</div>
+            <div>{{u?.brand}}</div>
+            <div>{{u?.color}}</div>
+            <div>{{u?.count}}</div>
+            <div>{{u?.orderSize}}</div>
+            <div><span>price:</span> {{u?.price|currency:'GBP'}}</div>
+          </div>
+        </div>
+        <div class="total-price" *ngIf="currentOrder.length>0">Total price: {{totalPrice|currency:'GBP'}}</div>
+
+        <button *ngIf="currentOrder.length>0" (click)="addNewDeal()" class="addnewDeal">Another good deal</button>
+
+      </div>
+    </div>
+    <table class="order-history">
+      <thead>
+        <th>#</th>
+        <th>name</th>
+        <th>category</th>
+        <th>type</th>
+        <th>brand</th>
+        <th>price</th>
+        <th>size</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of orderInfo;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{o?.name}}</td>
+          <td>{{o?.gender}}</td>
+          <td>{{o?.type}}</td>
+          <td>{{o?.brand}}</td>
+          <td>{{o?.price}}</td>
+          <td>{{o?.orderSize}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="vision == 3" class="thanks">
+    <p>thank you</p>
+    <a [routerLink]="[ '/men']">
+      <div>continue shopping</div>
+    </a>
+  </div>
+  <div class="admin-container" *ngIf="vision == 4">
+    <div class="left-menu">
+      <a [routerLink]="[ 'admin-products']">Products</a>
+      <a [routerLink]="[ 'admin-sales']">Sales</a>
+      <a [routerLink]="[ 'admin-new']">New</a>
+      <a [routerLink]="[ 'admin-orders']">Orders</a>
+      <div (click)="adminLogout()">Logout</div>
+    </div>
+    <div class="right-menu">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div *ngIf="closeThis" class="wait">
+    <div>wait a second</div>
+  </div>
+
+</div>

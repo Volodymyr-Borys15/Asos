@@ -1,0 +1,75 @@
+<section class="app">
+  APP EXCLUSIVE! <br>
+  GET 20% OFF EVERYTHING * <br>
+  Download now
+</section>
+<section class="way">
+  <p><a [routerLink]="[ '/women']">women</a> /
+    <a [routerLink]="[ '/women-all-sale']">women-sale</a> /
+    <a [routerLink]="['/women-sale/'+routepage]">{{routepage}}</a>
+  </p>
+</section>
+<section class="description">
+  <div>
+    <p>Women's sale</p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam voluptatem nisi temporibus delectus magni,
+    nostrum blanditiis repellendus. Perferendis magni distinctio voluptatibus ipsam illo ex aut fuga, rem officia quis
+    voluptatum neque, quas eum vitae. Doloribus, totam. Repellat, consectetur optio!
+  </div>
+</section>
+
+<section class="filter">
+  <!-- <p>color</p>
+    <select name="color" id="" [(ngModel)]="color">
+      <option value="" selected>none</option>
+      <option *ngFor="let col of colors" [value]='col'>{{col}}</option>  
+    </select>
+    <p>price</p>
+    <select name="price" id="" [(ngModel)]="price">
+      <option value="" selected>none</option> 
+      <option value="50">more than 50</option> 
+      <option value="100">more than 100</option> 
+      <option value="150">more than 150</option> 
+    </select>
+    <p>brand</p>
+    <select name="brand" id="" [(ngModel)]="brand">
+      <option value="" selected>none</option>
+      <option *ngFor="let b of brands" [value]='b'>{{b}}</option>  
+    </select> -->
+
+  <p>color</p>
+  <select name="color" id="" [(ngModel)]="color" (change)="filterColors($event)">
+    <option value="" selected>none</option>
+    <option *ngFor="let col of colors" [value]='col'>{{col}}</option>
+  </select>
+
+  <p>brands</p>
+  <select name="brand" id="" [(ngModel)]="brand" (change)="filterBrands($event)">
+    <option value="" selected>none</option>
+    <option *ngFor="let b of brands" [value]='b'>{{b}}</option>
+  </select>
+
+  <p>price</p>
+  <select name="price" id="" [(ngModel)]="price" (change)="filterPrices($event)">
+    <option value="" selected>none</option>
+    <option value="50">more than 50</option>
+    <option value="100">more than 100</option>
+    <option value="150">more than 150</option>
+    <option value="200">more than 200</option>
+  </select>
+
+</section>
+
+<section class="list-product">
+  <div class="card-product" *ngFor="let s of sales|salePipe:color:price:brand;">
+    <a [routerLink]="[  '/women-sale/'+s.category,s.id]">
+      <img src="{{s.image}}" alt="" width="100%">
+      <div class="prod-name">{{s.name}}</div>
+    </a>
+    <div class="wrap-fav">
+      <div class="prod-price">{{s.price | currency:'GBP'}}</div>
+      <div class="favor" (click)="addFavor(s,$event)"><img src="../../../../assets/prize.png" alt="" width="100%"></div>
+    </div>
+  </div>
+</section>
+<div (click)="showmore()" class="show-more">SHOW MORE</div>

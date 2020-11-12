@@ -1,0 +1,93 @@
+
+<form action="">
+    <label for="typeProduct">
+        <input type="text" [(ngModel)]="typeProduct" name="typeProduct" placeholder="type">
+    </label>
+    <label for="genderNew">
+        <input type="text" [(ngModel)]="genderNew" name="genderNew" placeholder="gender">
+    </label>
+    <label for="categoryNew">
+        <input type="text" [(ngModel)]="categoryNew" name="categoryNew" placeholder="category">
+    </label>
+    <label for="stylishNew">
+        <input type="text" [(ngModel)]="stylishNew" name="stylishNew" placeholder="style">
+    </label>
+    <label for="nameNew">
+        <input type="text" [(ngModel)]="nameNew" name="nameNew" placeholder="name">
+    </label>
+    <label for="brandNew">
+        <input type="text" [(ngModel)]="brandNew" name="brandNew" placeholder="brand">
+    </label>
+    <label for="priceNew">
+        <input type="number" [(ngModel)]="priceNew" name="priceNew" placeholder="price">
+    </label>
+    <label for="descriptionNew">
+        <input type="text" [(ngModel)]="descriptionNew" name="descriptionNew" placeholder="description">
+    </label>
+    <label for="colorNew">
+        <input type="text" [(ngModel)]="colorNew" name="colorNew" placeholder="color">
+    </label>
+    <label for="firstSizeNew">
+        <input type="text" [(ngModel)]="firstSizeNew" name="firstSizeNew" placeholder="size1">
+    </label>
+    <label for="secondSizeNew">
+        <input type="text" [(ngModel)]="secondSizeNew" name="secondSizeNew" placeholder="size2">
+    </label>
+    <label for="thirdSizeNew">
+        <input type="text" [(ngModel)]="thirdSizeNew" name="thirdSizeNew" placeholder="size3">
+    </label>
+    <label for="fourthSizeNew">
+        <input type="text" [(ngModel)]="fourthSizeNew" name="fourthSizeNew" placeholder="size4">
+    </label>
+    
+    <input type="file" name="file" id="file" (change)="uploadFile($event)" class="inputfile" />
+    <label for="file">Choose a image</label>
+
+    <button (click)="addNew()">{{addORsave}}</button>   
+</form>
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Type</th>
+        <th>Gender</th>
+        <th>Category</th>
+        <th>Style</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Count</th>
+        <th>Color</th>
+        <th>Date</th>
+        <th>Size1</th>
+        <th>Size2</th>
+        <th>Size3</th>
+        <th>Size4</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+        <tr *ngFor="let n of myNew; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{n.type}}</td>
+            <td>{{n.gender}}</td>
+            <td>{{n.category}}</td>
+            <td>{{n.style}}</td>
+            <td>{{n.name}}</td>
+            <td>{{n.brand}}</td>
+            <td>{{n.price}}</td>
+            <td>{{n.description}}</td>
+            <td>{{n.count}}</td>
+            <td>{{n.color}}</td>
+            <td>{{n.date|date}}</td>
+            <td>{{n.firstSize}}</td>
+            <td>{{n.secondSize}}</td>
+            <td>{{n.thirdSize}}</td>
+            <td>{{n.fourthSize}}</td>
+            <td>
+                <button (click)="editNew(n)">Edit</button>
+            </td>
+            <td>
+                <button (click)="deleteNew(n)">Delete</button>
+            </td>
+        </tr>
+</table>

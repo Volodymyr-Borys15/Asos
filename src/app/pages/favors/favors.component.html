@@ -1,0 +1,34 @@
+<section class="app">
+    APP EXCLUSIVE! <br>
+    GET 20% OFF EVERYTHING * <br>
+    Download now
+</section>
+
+<section class="empty-favors" *ngIf="favors?.length==0">
+     <p>add your favorites items</p>
+</section>
+
+<section class="list-product" *ngIf="favors?.length>0"> 
+    <div  class="card-product" *ngFor="let f of favors; let i=index">
+      <a [routerLink]="[ '/favor', f.id ]">
+        <img src="{{f.image}}" style="width: 100%;">
+        <div class="wrap-info">
+            <div class="prod-name">{{f.name}}</div>
+            <div class="prod-price">{{f.price | currency:'GBP'}}</div>
+        </div>
+        
+      </a>
+        <div class="select">
+            <select (change)='chooseSize($event)' #sizeSelect>
+                <option value="" selected disabled>Choose your size</option>
+                <option value="{{f.firstSize}}">{{f.firstSize}}</option>
+                <option value="{{f.secondSize}}">{{f.secondSize}}</option>
+                <option value="{{f.thirdSize}}">{{f.thirdSize}}</option>
+                <option value="{{f.fourthSize}}">{{f.fourthSize}}</option>
+            </select>
+        </div>
+        <!-- [disabled] = "!blockBtn" -->
+        <button class="add-to-bag" (click)="addProduct(f,$event)">{{add}}</button>  
+    </div>
+</section>
+

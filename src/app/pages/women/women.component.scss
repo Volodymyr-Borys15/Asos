@@ -1,0 +1,707 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .menu {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(110, 106, 106);
+    padding: 0 10px 0 20px;
+  
+    nav {
+      display: flex;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .box {
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+  
+    p {
+      font-size: 17px;
+    }
+  
+    &:hover {
+      background-color: #eee;
+    }
+  
+    &:hover a {
+      color: rgb(110, 106, 106);
+      transition: 1s;
+    }
+  }
+  
+  .sale {
+    background-color: #b70127;
+    font-size: 30px;
+  
+    &:hover a {
+      color: rgb(110, 106, 106);
+      transition: 1s;
+    }
+  }
+  
+  .app {
+    width: 100%;
+    min-height: 50px;
+    background-color: rgb(187, 167, 249);
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .delivery {
+    width: 100%;
+    height: 135px;
+    background-color: #20C89E;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  
+    .message-one {
+      width: 700px;
+      height: 40px;
+      background-color: white;
+      text-align: center;
+      line-height: 40px;
+      font-size: 30px;
+    }
+  
+    .message-two {
+      width: 450px;
+      height: 40px;
+      background-color: white;
+      text-align: center;
+      line-height: 40px;
+      font-size: 30px;
+    }
+  }
+  
+  .sale-box {
+    width: 100%;
+    min-height: 490px;
+    background-image: url('../../../assets/women-back.jpeg');
+    background-size: 100%;
+    margin-top: 40px;
+    padding-top: 25px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  
+    .message-three {
+      width: 200px;
+      height: 50px;
+      background-color: #cf3758;
+      color: white;
+      margin: 10px auto;
+      text-align: center;
+      line-height: 50px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+  
+    .message-four {
+      width: 300px;
+      height: 50px;
+      background-color: #cf3758;
+      color: white;
+      margin: 5px auto;
+      text-align: center;
+      line-height: 50px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+  
+  .carousel {
+    margin-top: 20px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 150px;
+    height: 140px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+  
+    &:hover {
+      transform: scale(1.1);
+  
+    }
+  }
+  
+  .title {
+    width: 150px;
+    max-height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: white;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .show-all {
+    width: 150px;
+    height: 45px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    line-height: 45px;
+    font-weight: bold;
+    margin: 10px auto;
+  
+    &:hover {
+      background-color: black;
+      color: white;
+      transition: 1s;
+    }
+  }
+  
+  .some-text {
+    width: 300px;
+    height: 20px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .new-box {
+    width: 100%;
+    height: 590px;
+    margin: 30px auto;
+    padding: 0 20px 0 20px;
+    overflow: hidden;
+  }
+  
+  .new-box-image {
+    width: 100%;
+    height: 550px;
+    background-image: url('../../../assets/women9.jpeg');
+    background-size: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .new-box-text {
+    width: 650px;
+    height: 100px;
+    z-index: 3;
+    font-size: 70px;
+    font-weight: bolder;
+    color: rgb(56, 55, 55);
+    text-align: center;
+  }
+  
+  .start-now {
+    width: 170px;
+    height: 45px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    line-height: 45px;
+    font-weight: bold;
+    margin: 10px 0 40px 0;
+    z-index: 3;
+    transition: 1s;
+    border: 2px solid white;
+  
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+  
+  .some-staff {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: -20px;
+    overflow: hidden;
+  }
+  
+  .big-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 290px;
+    height: 290px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .big-title {
+    width: 100%;
+    max-height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: white;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .fun-staff {
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  
+  .bigger-card {
+    width: 42%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .desc-one {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+  }
+  
+  .desc-two {
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .btn-active-wear {
+    width: 175px;
+    height: 45px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    line-height: 45px;
+    font-weight: bold;
+    transition: 1s;
+    border: 2px solid black;
+    margin: 0 auto;
+    padding: 0px 3px 0px 3px;
+  
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+  
+  .logo-brands {
+    width: 100%;
+    height: 350px;
+    padding: 20px 0 0 0;
+  }
+  
+  .title-logo {
+    width: 400px;
+    height: 30px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .list-logo {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .card-logo:hover {
+    opacity: 0.6;
+  }
+  
+  .sale-menu,
+  .show-men-brands,
+  .new-menu,
+  .show-men-clothing,
+  .show-men-shoes,
+  .show-men-acc {
+    display: none;
+    min-width: 700px;
+    min-height: 300px;
+    padding: 20px;
+    background-color: #eee;
+    position: absolute;
+    left: 20px;
+    z-index: 50;
+    color: black;
+  
+    ul {
+      list-style: none;
+  
+      li {
+        width: 260px;
+        height: 40px;
+        margin-top: 5px;
+      }
+  
+      a {
+        color: rgb(110, 106, 106);
+        font-size: 15px;
+      }
+    }
+  }
+  
+  .go-to-sale:hover .sale-menu {
+    display: block;
+  }
+  
+  .go-to-new:hover .new-menu {
+    display: block;
+  }
+  
+  .go-to-men-clothing:hover .show-men-clothing {
+    display: block;
+  }
+  
+  .go-to-men-shoes:hover .show-men-shoes {
+    display: block;
+  }
+  
+  .go-to-men-acc:hover .show-men-acc {
+    display: block;
+  }
+  
+  .go-to-men-brands:hover .show-men-brands {
+    display: block;
+  }
+  
+  
+  @media(min-width:1024px) and (max-width:1095px) {
+    .new-box-image {
+      height: 490px;
+    }
+  
+    .new-box {
+      height: 515px;
+    }
+  
+    .some-staff {
+      margin-bottom: 50px;
+      height: 310px;
+      height: 320px;
+  
+      a {
+        width: 220px;
+        height: 100%;
+      }
+    }
+  
+    .big-card {
+      height: 75%;
+      width: 220px;
+    }
+  }
+  
+  @media (min-width: 860px) and (max-width: 1024px) {
+    .new-box-image {
+      height: 380px;
+    }
+  
+    .new-box {
+      height: 400px;
+    }
+  
+    .some-staff {
+      margin-bottom: 50px;
+      height: 320px;
+  
+      a {
+        width: 220px;
+        height: 100%;
+      }
+    }
+  
+    .big-card {
+      height: 75%;
+      width: 220px;
+    }
+  
+    .big-title {
+      width: 100%;
+    }
+  
+    .fun-staff {
+      height: 680px;
+    }
+  
+    .logo-brands {
+      height: 250px;
+    }
+  }
+  
+  @media (min-width: 740px) and (max-width: 860px) {
+  
+    .carousel {
+      display: none;
+    }
+  
+    .sale-box {
+      min-height: 225px;
+    }
+  
+    .new-box-image {
+      height: 325px;
+    }
+  
+    .new-box {
+      height: 335px;
+    }
+  
+    .some-staff {
+      margin-bottom: 50px;
+      height: 250px;
+      margin-bottom: 10px;
+  
+      .big-card {
+        height: 75%;
+        width: 150px;
+  
+        a {
+          width: 150px;
+          height: 100%;
+  
+          .big-title {
+            width: 100%;
+            font-size: 19px;
+          }
+        }
+      }
+  
+    }
+  
+    .fun-staff {
+      height: 460px;
+    }
+  
+    .logo-brands {
+      height: 195px;
+    }
+  
+    .list-logo {
+      height: 150px;
+    }
+  
+    .bigger-card {
+      a {
+        text-align: center;
+  
+        img {
+          width: 70%;
+        }
+      }
+    }
+  
+    .desc-one {
+      display: none;
+    }
+  
+    .desc-two {
+      margin-top: 10px;
+    }
+  
+  }
+  
+  @media (min-width: 480px) and (max-width: 740px) {
+  
+    .app,
+    .delivery {
+      display: none;
+    }
+  
+    .carousel {
+      display: none;
+    }
+  
+    .sale-box {
+      min-height: 225px;
+    }
+  
+    .new-box-text {
+      display: none;
+    }
+  
+    .new-box-image {
+      height: 290px;
+    }
+  
+    .new-box {
+      height: 300px;
+    }
+  
+    .some-staff {
+      margin-bottom: 50px;
+      height: 380px;
+      margin-bottom: 10px;
+    }  
+    .big-card{
+      height: 250px;
+      text-align: center;
+      width: 250px;
+      box-shadow: none;
+    }
+  
+    .big-card:nth-child(odd){
+      background-color: red;
+      display: none;
+    }
+  
+    .big-card a {
+      width: 100%;
+      height: 100%;
+    }
+    .big-card>a>img{
+      width: 70%;
+    }
+    
+  
+    .big-title {
+      width: 100%;
+    }
+  
+    .fun-staff {
+      height: 396px;
+    }
+  
+    .logo-brands {
+      height: 195px;
+    }
+  
+    .list-logo {
+      height: 150px;
+    }
+  
+    .bigger-card {
+      a {
+        text-align: center;
+  
+        img {
+          width: 70%;
+        }
+      }
+    }
+  
+    .desc-one {
+      display: none;
+    }
+  
+    .desc-two {
+      margin-top: 10px;
+    }
+  
+   
+  
+  }
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    .app,
+    .delivery {
+      display: none;
+    }
+  
+    .carousel {
+      display: none;
+    }
+  
+    .title-logo{
+      width: 100%;
+    }
+  
+    .sale-box {
+      min-height: 225px;
+    }
+  
+    .new-box-text {
+      display: none;
+    }
+  
+    .new-box-image {
+      height: 195px;
+    }
+  
+    .new-box {
+      height: 205px;
+    }
+  
+    .some-staff {
+      display: none;
+    }
+  
+  
+    .fun-staff {
+      min-height: 800px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .bigger-card {
+      width: 100%;
+      height: 380px;
+  
+      a {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+  
+        img {
+          width: 50%;
+        }
+      }
+    }
+  
+    .logo-brands {
+      height: 195px;
+    }
+  
+    .list-logo {
+      height: 150px;
+    }
+  
+    .desc-one {
+      display: none;
+    }
+  
+    .desc-two {
+      margin-top: 10px;
+    }
+
+    .fun-staff{
+      height: 596px;
+    }
+
+    .bigger-card{
+      height: 300px;
+    }
+  
+  }

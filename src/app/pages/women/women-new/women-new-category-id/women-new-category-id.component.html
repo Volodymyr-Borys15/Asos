@@ -1,0 +1,60 @@
+<div class="container">
+    <section class="way">
+        <p><a [routerLink]="[ '/women']">women</a> / 
+            <a [routerLink]="['/women-new']">women-new</a> /    
+            <a [routerLink]="['/women-new-products/'+newProducts?.category]">{{newProducts?.category}}</a> /    
+        <span>{{newProducts?.name}}</span></p>
+      </section>
+    <div  class="card-product">
+        <div class="left-side">
+            <div class="image-product"><img src="{{newProducts?.image}}"></div>
+        </div>
+        <div class="right-side">
+            <div class="prod-name">{{newProducts?.name}}</div>
+            <div class="prod-price">{{newProducts?.price|currency:'GBP'}}</div>
+            <div class="prod-color"><strong>COLOUR:</strong> {{newProducts?.color}}</div>
+            <div class="prod-size"><strong>SIZE:</strong><br>
+                <select (change)='chooseSize($event)' #sizeSelect>
+                    <option value="" selected disabled>Choose your size</option>
+                    <option value="{{newProducts?.firstSize}}">{{newProducts?.firstSize}}</option>
+                    <option value="{{newProducts?.secondSize}}">{{newProducts?.secondSize}}</option>
+                    <option value="{{newProducts?.thirdSize}}">{{newProducts?.thirdSize}}</option>
+                    <option value="{{newProducts?.fourthSize}}">{{newProducts?.fourthSize}}</option>
+                </select>
+            </div> 
+            <!--  [disabled] = "!blockBtn" -->
+            <button class="add-to-bag" (click)="addProduct()">{{add}}</button> 
+            <div class="return-info">
+                
+                    We’ve extended returns to 90 days for the time being with a full refund – so you can carry on enjoying ASOS
+                
+            </div>
+            <div class="sizing-help">
+                <label>Sizing Help</label><br>
+                <span>Still unsure what size to get? </span>
+                <a href="">Find your recommended size </a>
+                <span>or check out our </span>
+                <a href="">size guide.</a>
+            </div>
+            
+        </div>
+        
+        <div class="bottom-side">
+            <div>
+                <span>Product description</span>
+                <p>{{newProducts?.description}}</p>
+            </div>
+            <div>
+                <span>Product ID</span>
+                <p>{{newProducts?.id}}</p>
+                <span>Brand</span>
+                <p>{{newProducts?.brand}}</p>
+            </div>
+            <div>
+                <span>About</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt.</p>
+            </div>
+        </div>
+    </div>
+</div>
+

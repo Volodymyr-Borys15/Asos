@@ -1,0 +1,18 @@
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Total Payment</th>
+        <th>Date</th>
+        <th>User Name</th>
+        <th>User Email</th>
+    </tr>
+    <tr *ngFor="let d of myOrder">
+            <td>{{d.id}}</td>
+            <td>{{d.name}}</td>
+            <td>{{d.totalPayment|currency:'GBP'}}</td>
+            <td>{{d.date|date}}</td>
+            <td>{{d.userName}}</td>
+            <td>{{d.userEmail}}</td>
+    </tr>
+</table>

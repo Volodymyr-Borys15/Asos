@@ -1,0 +1,58 @@
+<div class="container">
+    <section class="way">
+        <p><a [routerLink]="[ '/men']">men</a> / 
+            <a [routerLink]="['/men-all-azbrands']">a-z brands</a> / 
+            <span>{{product?.name}}</span> </p>
+      </section>
+    <div  class="card-product">
+        <div class="left-side">
+            <div class="image-product"><img src="{{product?.image}}"></div>
+        </div>
+        <div class="right-side">
+            <div class="prod-name">{{product?.name}}</div>
+            <div class="prod-price">{{product?.price|currency:'GBP'}}</div>
+            <div class="prod-color"><strong>COLOUR:</strong> {{product?.color}}</div>
+            <div class="prod-size"><strong>SIZE:</strong><br>
+                <select (change)='chooseSize($event)' #sizeSelect>
+                    <option value="" selected disabled>Choose your size</option>
+                    <option value="{{product?.firstSize}}">{{product?.firstSize}}</option>
+                    <option value="{{product?.secondSize}}">{{product?.secondSize}}</option>
+                    <option value="{{product?.thirdSize}}">{{product?.thirdSize}}</option>
+                    <option value="{{product?.fourthSize}}">{{product?.fourthSize}}</option>
+                </select>
+            </div> 
+            <!-- [disabled] = "!blockBtn" -->
+            <button class="add-to-bag" (click)="addProduct()">{{add}}</button> 
+            <div class="return-info">
+                
+                    We’ve extended returns to 90 days for the time being with a full refund – so you can carry on enjoying ASOS
+                
+            </div>
+            <div class="sizing-help">
+                <label>Sizing Help</label><br>
+                <span>Still unsure what size to get? </span>
+                <a href="">Find your recommended size </a>
+                <span>or check out our </span>
+                <a href="">size guide.</a>
+            </div>
+            
+        </div>
+        
+        <div class="bottom-side">
+            <div>
+                <span>Product description</span>
+                <p>{{product?.description}}</p>
+            </div>
+            <div>
+                <span>Product ID</span>
+                <p>{{product?.id}}</p>
+                <span>Brand</span>
+                <p>{{product?.brand}}</p>
+            </div>
+            <div>
+                <span>About</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt.</p>
+            </div>
+        </div>
+    </div>
+</div>

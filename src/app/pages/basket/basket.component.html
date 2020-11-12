@@ -1,0 +1,47 @@
+ <div class="container">
+    <div *ngIf="!order.length" class="empty-bag">
+        <p>Your bag is empty</p>   
+    </div>
+    <div class="orders" *ngIf="order.length">
+        <h1>My Bag</h1>
+        <div class="current-order" *ngFor="let o of order; let i=index" >
+            <div class="wrapper-image">
+            <div class="order-image">
+                <img src="{{o.image}}" width="100%">
+            </div>
+            </div>
+           
+            <div class="wrapper-info-order">
+            
+            <div class="order-price">{{o.price|currency:'GBP'}} <span (click)="deleteProduct(o)"> ⨯ </span></div>
+            <div class="order-name">{{o.name}}</div>
+
+            <div class="order-inform">
+            <div class="order-color">{{o.color}}</div>
+            <div class="order-size">{{o.orderSize}}</div>
+            </div>
+
+            <div class="prod-count">
+            <div class="plus" (click)="productCount(o,true)">+</div>
+            <div class="order-count">{{o.count}}</div>
+            <div class="minus" (click)="productCount(o,false)">−</div>
+            </div>
+
+            <div class="sub-total"><div>SUB-TOTAL:</div><div>{{o.price * o.count|currency:'GBP'}}</div></div>
+
+            </div>    
+
+        </div>
+    </div>
+    <div class="total" *ngIf="order.length">
+        <h1>Total</h1>
+        <div class="final-order">
+            <div class="total-price"><div>Total price :</div> <div>{{totalPrice|currency:'GBP'}}</div></div>
+            <div class="delivery"><div><strong>Delivery</strong></div><div>free</div></div>
+               <a [routerLink]="[ '/admin']" (click)="addOrder()" *ngIf="btnVis==true"><div class="checkout">Checkout</div></a>
+               
+               <a [routerLink]="[ '/admin']" (click)="addToOrder()" *ngIf="btnVis==false"><div class="checkout">Add to order</div></a>
+        </div>
+    </div>
+
+</div>
